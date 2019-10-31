@@ -89,7 +89,6 @@ export function requestDisAccept(data) {
     }).then(function (response) {
       dispatch(reciveData(types.REQUEST_UPDATE_DISACCEPT, response.data.data))
     }).catch(function (error) {
-      console.log(error);
     })
   }
 }
@@ -128,7 +127,6 @@ export function requestSendAccept(data) {
     }).then(function (response) {
       dispatch(reciveData(types.REQUEST_SEND_ACCEPT, response.data.data))
     }).catch(function (error) {
-      console.log(error)
     })
   }
 }
@@ -153,7 +151,6 @@ export function requestUpdateAccept(data) {
       if (error.response.data.errors[0].detail === "The absence days has registered be not appropriate for browsing, please check back before browsing for this case.") {
         message.error("Bảng đăng ký nghỉ này đã vượt quá số ngày quy định của họ!!")
       }
-      console.log(error)
     })
   }
 }
@@ -170,7 +167,6 @@ export function requestGetMail() {
     }).then(function (response) {
       dispatch(reciveData(types.REQUEST_GET_MAIL, response.data.data))
     }).catch(function (error) {
-      console.log(error)
     })
   }
 }
@@ -277,7 +273,6 @@ export function requestGetDay() {
     }).then(function (response) {
       dispatch(reciveData(types.REQUEST_GET_REGISTRATION, response.data.data))
     }).catch(function (error) {
-      console.log(error)
     })
   }
 }
@@ -316,8 +311,6 @@ export function requestUpdateDay(data) {
       _method: 'PUT'
     }
   }
-  console.log(paramData);
-
   return (dispatch) => {
     return axios.request({
       method: 'POST',

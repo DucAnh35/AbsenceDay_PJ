@@ -14,6 +14,7 @@ import * as action_search from '../../../actions/search';
 // import {message} from 'antd'
 import { connect } from 'react-redux';
 import Cookies from 'universal-cookie';
+import './styles.css'
 var dateFormat = require('dateformat');
 const cookies = new Cookies();
 class HomeComponent extends Component {
@@ -26,6 +27,11 @@ class HomeComponent extends Component {
       visible: false,
       list: false,
     }
+  }
+  handleScreenCapture = (screenCapture) => {
+    this.setState({
+      screenCapture
+    })
   }
   componentDidMount() {
     this.props.dispatch(action_dayoff.requestGetDayOff());
